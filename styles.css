@@ -1,11 +1,33 @@
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
 body{
     display: flex;
     justify-content: center;
     align-items: center;
     height: 100vh;
-    background-color: #828f65;
+    background-color: #b9dcd7;
     font-family: 'Montserrat', sans-serif;
+    font-size: 16px;
+}
+
+h1{
+    text-align: center;
+    color: #007e6c;
+}
+
+h2{
+    text-align: center;
+    color: #036d5d;
+}
+
+hr{
+    width: 50em;
+    border: 1px solid #007e6c;
+    margin: 1em 0;
 }
 
 .container{
@@ -17,6 +39,8 @@ body{
 
 #input{
     width: 40em;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 500;
     background-color: transparent;
     height: 10em;
     border-radius: 5px;
@@ -29,7 +53,7 @@ body{
     display: grid;
     grid-template-columns: repeat(12, 1fr);
     gap: 5px;
-    background-color: #333;
+    background-color: #034c41;
     padding: 10px;
     border-radius: 5px;
     width: 50em;
@@ -40,15 +64,21 @@ body{
     justify-content: center;
     align-items: center;
     height: 50px;
-    background-color: #ffffff;
+    background-color: #036d5d;
     border-radius: 5px;
-    color: #000000;
+    color: #ffffff;
     cursor: pointer;
     user-select: none;
 }
-
+#text{
+    width: 30em;
+    text-align: center;
+    padding: 10px;
+    font-size: 1.5em;
+    overflow: auto;
+}
 .active{
-    background-color: #FFA500;
+    background-color: #03483e;
 }
 
 [data-key=Space] {
@@ -61,4 +91,66 @@ body{
 [data-key=Backspace]
 {
     grid-column: span 2;
+}
+#contador{
+    font-size: 2em;
+    color: #036d5d;
+    font-weight: 600;
+}
+.correcto{
+    color: green;
+}
+.incorrecto{
+    color: red;
+}
+
+.botones-tiempo{
+    display: flex;
+}
+
+button{
+    margin: 0px 80px;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 1em;
+    font-weight: 500;
+    background-color: #036d5d;
+    color: #ffffff;
+    border: none;
+    border-radius: 5px;
+    padding: 10px;
+    cursor: pointer;
+}
+
+.modal{
+    position: fixed;
+    width: 60%;
+    height: 25%;
+    background-color: #ffffff;
+    display: flex;  
+    flex-direction: column;
+    gap: 20px;
+    justify-content: center;
+    align-items: center;
+    z-index: 9999;
+    border-radius: 3em;
+}
+
+.modal-content{
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 5px;
+    text-align: center;
+}
+
+#modal-btn{
+    background-color: #036d5d;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+#modal-btn:hover{
+    background-color: #034c41;
 }
