@@ -47,6 +47,7 @@ hr{
     border: 2px solid #333;
     padding: 10px;
     font-size: 20px;
+    resize: none;
 }
 
 .teclado{
@@ -61,6 +62,7 @@ hr{
 
 .tecla{
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
     height: 50px;
@@ -69,6 +71,7 @@ hr{
     color: #ffffff;
     cursor: pointer;
     user-select: none;
+    padding: 5px;
 }
 #text{
     width: 30em;
@@ -168,4 +171,20 @@ button{
 
 #modal-btn:hover{
     background-color: #034c41;
+}
+
+.min{
+    display: flex;
+    height: 30%;
+    width: 100%;
+    justify-content: start;
+    align-items: start;
+    font-weight: 300;
+    font-size: .8em;
+}
+.principal{
+    display: flex;
+    height: 70%;
+    width: 100%;
+    justify-content: center;
 }
