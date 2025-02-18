@@ -1,3 +1,4 @@
+// Frases a elegir aleatoriamente
 const textos = [
     "das",
     "Los pulpos tienen tres corazones y su sangre es de color azul debido a la presencia de hemocianina en lugar de hemoglobina.",
@@ -26,6 +27,7 @@ const contador = document.getElementById('contador');
 
 text.innerHTML = textoAleatorio;
 
+// Eventos del teclado
 window.addEventListener('keydown', (event) => {
     const tecla = document.querySelector(`.tecla[data-key="${event.code}"]`); 
     
@@ -71,6 +73,7 @@ window.addEventListener('keydown', (event) => {
             }
 });
 
+// Funciones para el cronometro
 let cronometro;
 let tiempoIniciado = false;
 
@@ -87,21 +90,11 @@ function iniciarCronometro() {
     }, 1000);
 }
 
+
+// Verificar si el texto ingresado es correcto dependiendo de los cambios del input
 input.addEventListener('input', () => {
     if (text.innerHTML == input.value){ 
-        const modal = document.createElement('div');
-        modal.classList.add('modal');
-        modal.innerHTML = `
-            <h2>¡Completaste con éxito!</h2>
-            <p>Lo completaste en ${contador.innerHTML}</p>
-            <button id="modal-btn">Cerrar</button>
-        `;
-        document.body.appendChild(modal);
-        const modalBtn = document.getElementById('modal-btn');
-        modalBtn.addEventListener('click', () => {
-            document.body.removeChild(modal);
-        });
-        
+        abrirModal();
         console.log(`Lo completaste en ${contador.innerHTML}`)
         contador.innerHTML = "00:00";
         input.value = "";
@@ -124,6 +117,32 @@ input.addEventListener('input', () => {
     }
 })
 
+// Funciones para abrir y cerrar modal
+function abrirModal() {
+    const modal = document.createElement('div');
+    modal.classList.add('modal');
+    modal.innerHTML = `
+        <h2>¡Completaste con éxito!</h2>
+        <p class="modal-text">Lo completaste en ${contador.innerHTML}</p>
+        <button id="modal-btn">Cerrar</button>
+    `;
+    const mymodal = document.querySelector('.mymodal');
+    mymodal.appendChild(modal);
+    mymodal.style.display = 'flex';
+    cerrarModal();
+}
+
+function cerrarModal() {
+    const mymodal = document.querySelector('.mymodal');
+    const modalBtn = document.getElementById('modal-btn');
+    window.addEventListener('click', (event) => {
+        if (event.target == mymodal || event.target.id == modalBtn.id) {
+            mymodal.style.display = 'none';
+        }
+    });
+}
+
+// Botones para reiniciar y cambiar frase
 const btnReiniciar = document.querySelector('#btnReiniciar');
 const btnCambiar = document.querySelector('#btnCambiar');
 
@@ -138,12 +157,7 @@ const reiniciar = () => {
 
 const cambiarFrase = () => {
     text.innerHTML = textos[Math.floor(Math.random() * (textos.length))];
-    input.value = "";
-    text.classList.remove('incorrecto');
-    text.classList.remove('correcto');
-    clearInterval(cronometro);
-    contador.innerHTML = "00:00";
-    tiempoIniciado = false;
+    reiniciar();
 }
 
 btnReiniciar.addEventListener('click', reiniciar);
