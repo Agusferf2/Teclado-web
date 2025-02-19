@@ -1,80 +1,122 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Teclado Web</title>
     <link rel="stylesheet" href="styles.css">
 </head>
+
 <body>
-    <div class="container">
-        <h1>Teclado Web</h1>
-        <hr>
-        <h2>Escribe el texto lo mas rapido que puedas</h2>
-        <div class="botones-tiempo">
-            <button id="btnReiniciar">Reiniciar</button>
-            <p id="contador">00:00</p>
-            <button id="btnCambiar">Cambiar frase</button>
-        </div>
-        <hr>
-        <p id="text"></p>
-        <textarea id="input" readonly></textarea>
-        <div class="teclado">
-            <div class="tecla" data-key="Digit1"><p class="min">!</p><p class="principal">1</p></div>
-            <div class="tecla" data-key="Digit2"><p class="min">"</p><p class="principal">2</p></div>
-            <div class="tecla" data-key="Digit3"><p class="min">#</p><p class="principal">3</p></div>
-            <div class="tecla" data-key="Digit4"><p class="min">$</p><p class="principal">4</p></div>
-            <div class="tecla" data-key="Digit5"><p class="min">%</p><p class="principal">5</p></div>  
-            <div class="tecla" data-key="Digit6"><p class="min">&</p><p class="principal">6</p></div>
-            <div class="tecla" data-key="Digit7"><p class="min">/</p><p class="principal">7</p></div>
-            <div class="tecla" data-key="Digit8"><p class="min">(</p><p class="principal">8</p></div>
-            <div class="tecla" data-key="Digit9"><p class="min">)</p><p class="principal">9</p></div>
-            <div class="tecla" data-key="Digit0"><p class="min">=</p><p class="principal">0</p></div>
-            <div class="tecla" data-key="Backspace">Backspace</div> 
-            <div class="tecla" data-key="Tab">Tab</div>
-            <div class="tecla" data-key="KeyQ">Q</div>
-            <div class="tecla" data-key="KeyW">W</div>
-            <div class="tecla" data-key="KeyE">E</div>
-            <div class="tecla" data-key="KeyR">R</div>
-            <div class="tecla" data-key="KeyT">T</div>
-            <div class="tecla" data-key="KeyY">Y</div>
-            <div class="tecla" data-key="KeyU">U</div>
-            <div class="tecla" data-key="KeyI">I</div>
-            <div class="tecla" data-key="KeyO">O</div>
-            <div class="tecla" data-key="KeyP">P</div>
-            <div class="tecla" data-key="BracketLeft"><p class="min">¨</p><p class="principal">´</p></div>
-            <div class="tecla" data-key="CapsLock">CapsLock</div>
-            <div class="tecla" data-key="KeyA">A</div>
-            <div class="tecla" data-key="KeyS">S</div>
-            <div class="tecla" data-key="KeyD">D</div>
-            <div class="tecla" data-key="KeyF">F</div>
-            <div class="tecla" data-key="KeyG">G</div>
-            <div class="tecla" data-key="KeyH">H</div>
-            <div class="tecla" data-key="KeyJ">J</div>
-            <div class="tecla" data-key="KeyK">K</div>
-            <div class="tecla" data-key="KeyL">L</div>
-            <div class="tecla" data-key="Enter">Enter</div>
-            <div class="tecla" data-key="ShiftLeft">Shift</div>
-            <div class="tecla" data-key="KeyZ">Z</div>
-            <div class="tecla" data-key="KeyX">X</div>
-            <div class="tecla" data-key="KeyC">C</div>
-            <div class="tecla" data-key="KeyV">V</div>
-            <div class="tecla" data-key="KeyB">B</div>
-            <div class="tecla" data-key="KeyN">N</div>
-            <div class="tecla" data-key="KeyM">M</div>
-            <div class="tecla" data-key="Semicolon">Ñ</div>
-            <div class="tecla" data-key="Comma"><p class="min">;</p><p class="principal">,</p></div>
-            <div class="tecla" data-key="Period"><p class="min">:</p><p class="principal">.</p></div>
-            <div class="tecla" data-key="Minus"><p class="min">?</p><p class="principal">'</p></div>
-            <div class="tecla" data-key="ControlLeft">Ctrl</div>
-            <div class="tecla" data-key="AltLeft">Alt</div>
-            <div class="tecla" data-key="Space">Space</div>
-            <div class="tecla" data-key="AltRight">Alt</div>
-            <div class="tecla" data-key="ControlRight">Ctrl</div>
-        </div>
-        <div class="mymodal"></div>
+    <h1>Teclado Web</h1>
+    <h2>Escribe el texto lo mas rapido que puedas</h2>
+    <div class="botones-tiempo">
+        <button id="btnReiniciar">Reiniciar</button>
+        <p id="contador">00:00</p>
+        <button id="btnCambiar">Cambiar frase</button>
     </div>
-    
+    <hr>
+    <p id="text"></p>
+    <textarea id="input" readonly></textarea>
+    <div class="teclado">
+        <div class="tecla" data-key="Digit1">
+            <p class="min">!</p>
+            <p class="principal">1</p>
+        </div>
+        <div class="tecla" data-key="Digit2">
+            <p class="min">"</p>
+            <p class="principal">2</p>
+        </div>
+        <div class="tecla" data-key="Digit3">
+            <p class="min">#</p>
+            <p class="principal">3</p>
+        </div>
+        <div class="tecla" data-key="Digit4">
+            <p class="min">$</p>
+            <p class="principal">4</p>
+        </div>
+        <div class="tecla" data-key="Digit5">
+            <p class="min">%</p>
+            <p class="principal">5</p>
+        </div>
+        <div class="tecla" data-key="Digit6">
+            <p class="min">&</p>
+            <p class="principal">6</p>
+        </div>
+        <div class="tecla" data-key="Digit7">
+            <p class="min">/</p>
+            <p class="principal">7</p>
+        </div>
+        <div class="tecla" data-key="Digit8">
+            <p class="min">(</p>
+            <p class="principal">8</p>
+        </div>
+        <div class="tecla" data-key="Digit9">
+            <p class="min">)</p>
+            <p class="principal">9</p>
+        </div>
+        <div class="tecla" data-key="Digit0">
+            <p class="min">=</p>
+            <p class="principal">0</p>
+        </div>
+        <div class="tecla" data-key="Backspace">Backspace</div>
+        <div class="tecla" data-key="Tab">Tab</div>
+        <div class="tecla" data-key="KeyQ">Q</div>
+        <div class="tecla" data-key="KeyW">W</div>
+        <div class="tecla" data-key="KeyE">E</div>
+        <div class="tecla" data-key="KeyR">R</div>
+        <div class="tecla" data-key="KeyT">T</div>
+        <div class="tecla" data-key="KeyY">Y</div>
+        <div class="tecla" data-key="KeyU">U</div>
+        <div class="tecla" data-key="KeyI">I</div>
+        <div class="tecla" data-key="KeyO">O</div>
+        <div class="tecla" data-key="KeyP">P</div>
+        <div class="tecla" data-key="BracketLeft">
+            <p class="min">¨</p>
+            <p class="principal">´</p>
+        </div>
+        <div class="tecla" data-key="CapsLock">CapsLock</div>
+        <div class="tecla" data-key="KeyA">A</div>
+        <div class="tecla" data-key="KeyS">S</div>
+        <div class="tecla" data-key="KeyD">D</div>
+        <div class="tecla" data-key="KeyF">F</div>
+        <div class="tecla" data-key="KeyG">G</div>
+        <div class="tecla" data-key="KeyH">H</div>
+        <div class="tecla" data-key="KeyJ">J</div>
+        <div class="tecla" data-key="KeyK">K</div>
+        <div class="tecla" data-key="KeyL">L</div>
+        <div class="tecla" data-key="Enter">Enter</div>
+        <div class="tecla" data-key="ShiftLeft">Shift</div>
+        <div class="tecla" data-key="KeyZ">Z</div>
+        <div class="tecla" data-key="KeyX">X</div>
+        <div class="tecla" data-key="KeyC">C</div>
+        <div class="tecla" data-key="KeyV">V</div>
+        <div class="tecla" data-key="KeyB">B</div>
+        <div class="tecla" data-key="KeyN">N</div>
+        <div class="tecla" data-key="KeyM">M</div>
+        <div class="tecla" data-key="Semicolon">Ñ</div>
+        <div class="tecla" data-key="Comma">
+            <p class="min">;</p>
+            <p class="principal">,</p>
+        </div>
+        <div class="tecla" data-key="Period">
+            <p class="min">:</p>
+            <p class="principal">.</p>
+        </div>
+        <div class="tecla" data-key="Minus">
+            <p class="min">?</p>
+            <p class="principal">'</p>
+        </div>
+        <div class="tecla" data-key="ControlLeft">Ctrl</div>
+        <div class="tecla" data-key="AltLeft">Alt</div>
+        <div class="tecla" data-key="Space">Space</div>
+        <div class="tecla" data-key="AltRight">Alt</div>
+        <div class="tecla" data-key="ControlRight">Ctrl</div>
+    </div>
+    <div class="mymodal"></div>
+
     <script src="script.js"></script>
 </body>
+
 </html>

@@ -24,9 +24,10 @@ const input = document.getElementById("input");
 
 const contador = document.getElementById("contador");
 
-text.innerHTML = textoAleatorio
+text.innerHTML = textoAleatorio;
 // Eventos del teclado
 window.addEventListener("keydown", (event) => {
+  event.preventDefault();
   const tecla = document.querySelector(`.tecla[data-key="${event.code}"]`);
   const presskey = () => {
     tecla.classList.add("active");
@@ -61,7 +62,7 @@ window.addEventListener("keydown", (event) => {
       presskey();
       break;
     default:
-    input.value += event.key;
+      input.value += event.key;
       input.dispatchEvent(new Event("input"));
       presskey();
   }
